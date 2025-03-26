@@ -18,8 +18,8 @@ def Convert(txt1, txt2):
 
 def SaveData():
     with open("datos.csv", mode="w", newline="", encoding="utf-8") as file:
-        escritor = csv.writer(file) 
-        escritor.writerows(values)
+        writer = csv.writer(file) 
+        writer.writerows(values)
     
 data = re.sub('\.', ',', ReadData())
 
