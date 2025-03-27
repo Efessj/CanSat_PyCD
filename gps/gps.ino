@@ -5,31 +5,29 @@ static const int gpsTX = 3, gpsRX = 4;
 SoftwareSerial gpsSerial(gpsRX, gpsTX);
 TinyGPSPlus gps;
 
-float latitud, longitud
+float latitud, longitud;
 
 void setup()
 {
   Serial.begin(9600);
   gpsSerial.begin(9600);
-  Serial.println("Buscando señal GPS...");
+  //Serial.println("Buscando señal GPS...");
 }
 
 void loop()
 {
   if (gpsSerial.available() > 0) {
     gps.encode(gpsSerial.read());  // Decodifica los datos recibidos
-
-    if (gps.location.isUpdated()) {  // Solo muestra si hay datos nuevos
       
-      latitud = gps.location.lat()
-      longitud = gps.location.lng()
-      
-      Serial.print(" Latitud: ");
-      Serial.print(latitud, 6);
-      Serial.print(" Longitud: ");
-      Serial.println(longitud, 6);
+    latitud = gps.location.lat();
+    longitud = gps.location.lng();
     }
-
-    delay(1000)
+	
+	Serial.print(" Latitud: ");
+  Serial.print(latitud, 6);
+  Serial.print(" Longitud: ");
+  Serial.println(longitud, 6);
+  delay(1000);
+  
   }
 }
