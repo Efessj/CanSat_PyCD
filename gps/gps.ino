@@ -10,7 +10,7 @@ float latitud, longitud;
 void setup()
 {
   Serial.begin(9600);
-  gpsSerial.begin(9600);
+  gpsSerial.begin(4800);
   //Serial.println("Buscando señal GPS...");
 }
 
