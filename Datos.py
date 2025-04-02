@@ -30,7 +30,7 @@ Convert()
 Removetxt('presio:')
 Removetxt('temperatura:')
 Removetxt('corriente:')
-Removetxt('latitiud:')
+Removetxt('latitud:')
 Removetxt('longitud:')
 
 SaveData()
