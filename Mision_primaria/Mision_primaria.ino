@@ -45,7 +45,7 @@ void setup()
 
 
 void loop() {
-  uint32_t    presio = bmp.getPressure();
+  uint32_t presio = bmp.getPressure();
   float temp = bmp.getTemperature();
   
   if (tiempo + 1000 < millis()){

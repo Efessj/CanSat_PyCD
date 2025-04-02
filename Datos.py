@@ -8,13 +8,13 @@ def ReadData():
     with open('data.txt', 'r', encoding="utf-8") as dataFile:
         return dataFile.read()
 
-def Convert(txt1, txt2):
+def Convert(txt):
     for i in data.split('\n'):
         values.append(i.split(' '))
 
     for i in values:
-        if txt1 in i: i.remove(txt1)
-        if txt2 in i: i.remove(txt2)
+        if txt in i: i.remove(txt)
+
 
 def SaveData():
     with open("datos.csv", mode="w", newline="", encoding="utf-8") as file:
@@ -23,6 +23,10 @@ def SaveData():
     
 data = re.sub('\.', ',', ReadData())
 
-Convert('presió:', 'temperatura:')
+Convert('presio:')
+Convert('temperatura:')
+Convert('corriente:')
+Convert('latitiud:')
+Convert('longitud:')
 
 print('Archivo CSV creado con exito')
