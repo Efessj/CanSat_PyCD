@@ -1,9 +1,9 @@
 import csv
 import re
 
-values = [['paquete', 'presión', 'temperatura']]
+values = [['paquete', 'presión', 'temperatura', 'intensidad', 'latitud', 'longitud']]
 
-#n presió: nnnnnnn temperatura: nn.nn\n
+#n presió: nnnnnnn temperatura: nn.nn\n corriente: nn.nn latitud: nnnn longitud: nnnn
 def ReadData():
     with open('data.txt', 'r', encoding="utf-8") as dataFile:
         return dataFile.read()

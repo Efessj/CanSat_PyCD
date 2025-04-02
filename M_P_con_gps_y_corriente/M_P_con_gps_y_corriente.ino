@@ -40,7 +40,7 @@ void printLastOperateStatus(BMP::eStatus_t eStatus)
 
 void setup()
 {
-  gpsSerial.begin(4800);
+  gpsSerial.begin(9600);
   Serial.begin(9600);
   bmp.reset();
   Serial.println("bmp config test");
@@ -79,12 +79,12 @@ void loop() {
   float voltajeSensor= analogRead(A0)*(5.0 / 1023.0); //lectura del sensor   
   float I=(voltajeSensor-2.5)/Sensibilidad; //Ecuación  para obtener la corriente
 
-  if (gpsSerial.available() > 0) {
-    gps.encode(gpsSerial.read());  // Decodifica los datos recibidos
+  
+  gps.encode(gpsSerial.read());  // Decodifica los datos recibidos
       
-    latitud = gps.location.lat();
-    longitud = gps.location.lng();
-  }
+  latitud = gps.location.lat();
+  longitud = gps.location.lng();
+  
 
   if (tiempo + 1000 < millis()){
     Serial.print(paquete);
